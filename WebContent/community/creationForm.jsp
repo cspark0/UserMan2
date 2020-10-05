@@ -1,11 +1,16 @@
 <%@page contentType="text/html; charset=utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html lang="ko-kr">
 <head>
-<title>커뮤니티 관리</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel=stylesheet href="<c:url value='/css/community.css' />" type="text/css">
-<script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>커뮤니티 관리 - 생성</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 	<script>
 function commCreate() {
 	if (form.name.value == "") {
 		alert("이름을 입력하십시오.");
@@ -19,59 +24,43 @@ function commCreate() {
 	}	
 	form.submit();
 }
-
-function commList(targetUri) {
-	form.action = targetUri;
-	form.submit();
-}
-</script>
+	</script>
 </head>
-<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
-<br>
-<!-- registration form  -->
-<form name="form" method="POST" action="<c:url value='/community/create' />">
-  <table style="width: 100%">
-    <tr>
-      <td width="20"></td>
-	  <td>
-	    <table>
-		  <tr>
-		    <td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>커뮤니티 관리 - 생성</b>&nbsp;&nbsp;</td>
-		  </tr>
-	    </table>  
-	    <br>	  	   
-	    <!-- 커뮤니티 생성이 실패한 경우 exception 객체에 저장된 오류 메시지를 출력 -->
-        <c:if test="${creationFailed}">
-	      <font color="red"><c:out value="${exception.getMessage()}" /></font>
-	    </c:if>
-	    <table style="background-color: YellowGreen">
-	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">이름</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				<input type="text" style="width: 240" name="name" 
-				 	<c:if test="${creationFailed}">value="${comm.name}"</c:if>>
-			</td>
-		  </tr>
-	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">설명</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				<input type="text" style="width: 240" name="desc" 
+<body>
+<%@include file="/user/navbar.jsp" %>
+
+<div class="container">  
+	<br>
+	<h4>커뮤니티 생성</h4>
+	<br>
+	<!-- 회원가입이 실패한 경우 exception 객체에 저장된 오류 메시지를 출력 -->
+	<div class="row col-lg-12">
+		<c:if test="${creationFailed}">
+			<h6 class="text-danger"><c:out value="${exception.getMessage()}"/></h6>
+		</c:if>
+	</div>	  
+	<!-- registration form  -->
+	<form name="form" method="POST" action="<c:url value='/community/create' />">
+    	<div class="form-group row">   
+	        <label for="userId" class="col-lg-2 col-form-label">이름</label>
+	        <div class="col-lg-10">
+	            <input type="text" name="name" class="form-control" placeholder="이름"
+	            	<c:if test="${creationFailed}">value="${comm.name}"</c:if>>	            	
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label for="userId" class="col-lg-2 col-form-label">설명</label>
+	        <div class="col-lg-10">
+	            <input type="text" name="desc" class="form-control" placeholder="설명" 
 					<c:if test="${creationFailed}">value="${comm.description}"</c:if>>
-			</td>
-		  </tr>	 
-	    </table>
+	        </div>
+	    </div>       
 	    <br>
-	    <table style="width: 100%">
-		  <tr>
-			<td align="left">
-			<input type="button" value="생성" onClick="commCreate()"> &nbsp;
-			<input type="button" value="커뮤니티 목록" onClick="commList('<c:url value='/community/list' />')">
-			</td>
-		  </tr>
-	    </table>
-	  </td>
-    </tr>
-  </table>  
-</form>
+	    <div class="form-group">        
+			<input type="button" class="btn btn-primary" value="생성" onClick="commCreate()"> 
+			<a href="<c:url value='/community/list' />" class="btn btn-link">커뮤니티 목록</a>    		     
+		</div>   
+	</form>
+</div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	<display-name>UserMan2</display-name>
-	<description>User Manager Ver.2</description>
+	<display-name>UserMan2 with Bootstrap (UserMan3b)</display-name>
+	<description>UserManager based on MVC pattern and Bootstrap</description>
 	<distributable />
 	<filter>
 		<filter-name>Resource Filter</filter-name>

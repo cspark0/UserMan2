@@ -1,12 +1,16 @@
 <%@page contentType="text/html; charset=utf-8" %>
-<%@page import="model.*" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html lang="ko-kr">
 <head>
-<title>커뮤니티 관리</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel=stylesheet href="<c:url value='/css/community.css' />" type="text/css">
-<script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>커뮤니티 관리 - 수정</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 	<script>
 function commModify() {
 	if (form.name.value == "") {
 		alert("이름을 입력하십시오.");
@@ -20,93 +24,80 @@ function commModify() {
 	}	
 	form.submit();
 }
-
-function commList(targetUri) {
-	form.action = targetUri;
-	form.submit();
-}
-</script>
+	</script>
 </head>
-<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
-<br>
-<!-- Update Form  -->
-<form name="form" method="POST" action="<c:url value='/community/update' />">
-  <input type="hidden" name="commId" value="${community.id}"/>	  
-  <table style="width: 100%">
-	<tr>
-	  <td width="20"></td>
-	  <td>
-	    <table>
-		  <tr>
-			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>커뮤니티 관리 - 수정</b>&nbsp;&nbsp;</td>
-		  </tr>
-	    </table>  
-	    <br>	  
-	    <table style="background-color: YellowGreen">
-	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">커뮤니티 ID</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				${community.id}
-			</td>
-		  </tr>
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">이름</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				<input type="text" style="width: 240" name="name" value="${community.name}">
-			</td>
-		  </tr>
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">설명</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				<input type="text" style="width: 240" name="desc" value="${community.description}">
-			</td>
-		  </tr>
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">개설일자</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				${community.startDate}
-			</td>
-		  </tr>
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">회원 수</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				${community.numOfMembers}
-			</td>
-		  </tr>	
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">회장</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-	 			<select name="chairId" style="width: 240" >
+<body>
+<%@include file="/user/navbar.jsp" %>
+
+<div class="container">  
+	<br>
+	<h4>커뮤니티 수정</h4>
+	<br>
+	<!-- Update Form  -->
+	<form name="form" method="POST" action="<c:url value='/community/update' />">
+		<input type="hidden" name="commId" value="${community.id}"/>	  
+	  	<div class="form-group row">   
+	        <label class="col-lg-2 col-form-label">커뮤니티 ID</label>
+	        <div class="col-lg-10">
+	        	<p class="form-control-static">${community.id}</p> 
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label for="name" class="col-lg-2 col-form-label">이름</label>
+	        <div class="col-lg-10">
+	            <input type="text" name="name" class="form-control" value="${community.name}"> 
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label for="desc" class="col-lg-2 col-form-label">설명</label>
+	        <div class="col-lg-10">
+	            <input type="text" name="desc" class="form-control" value="${community.description}"> 
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label class="col-lg-2 col-form-label">개설일자</label>
+	        <div class="col-lg-10">
+	        	<p class="form-control-static">${community.startDate}</p> 
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label class="col-lg-2 col-form-label">회원 수</label>
+	        <div class="col-lg-10">
+	        	<p class="form-control-static">${community.numOfMembers}</p> 
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label for="password" class="col-lg-2 col-form-label">회장</label>
+	        <div class="col-lg-10">
+	            <select name="chairId" class="form-control">
 					<option value="">없음</option>
 					<c:forEach var="member" items="${community.memberList}">
 						<option value="${member.userId}"
 							<c:if test="${member.userId eq community.chairId}">selected="selected"</c:if>
 							>${member.userId}</option>
 					</c:forEach>
-				</select>			
-			</td>
-		  </tr>		
-		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">회원</td>
-			<td width="250" bgcolor="ffffff" style="padding-left: 10">
-				<c:forEach var="member" items="${community.memberList}">
-					${member.userId} &nbsp;
-				</c:forEach>
-			</td>			
-		  </tr>	
-	    </table>
-	    <br>	  
-	    <table style="width: 100%">
-		  <tr>
-			<td align="left">
-			<input type="button" value="수정" onClick="commModify()"> &nbsp;
-			<input type="button" value="목록" onClick="commList('<c:url value='/community/list' />')">
-			</td>
-		  </tr>
-	    </table>
-	  </td>
-	</tr>
-  </table>  
-</form>
+				</select>
+	        </div>
+	    </div>       
+	    <div class="form-group row">   
+	        <label class="col-lg-2 col-form-label">회원</label>
+	        <div class="col-lg-10">
+	            <p class="form-control-static">
+	            	<c:forEach var="member" items="${community.memberList}">
+						${member.userId} &nbsp; 
+					</c:forEach>
+				</p>
+	        </div>
+	    </div>    
+	    <br>
+		<div class="form-group">        
+			<input type="button" class="btn btn-primary" value="수정" onClick="commModify()">
+			<a href="<c:url value='/community/view'>
+				      	<c:param name='commId' value='${community.id}'/>
+				     </c:url>" class="btn btn-link">조회</a>
+			<a href="<c:url value='/community/list' />" class="btn btn-link">커뮤니티 목록</a>     
+		</div>	 
+	</form>
+</div>
 </body>
 </html>
