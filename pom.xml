@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>kr.ac.dongduk.dbp</groupId>
-	<artifactId>UserMan3b</artifactId>
+	<artifactId>UserMan3c</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>UserManager based on MVC pattern and Bootstrap</name>
+	<name>UserManager based on MVC pattern, Bootstrap, and MyBatis</name>
 	<description>Sample project for Database Programming class</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -16,6 +16,8 @@
 		<jstl.version>1.2</jstl.version>
 		<logback-classic.version>1.1.2</logback-classic.version>
 		<commons-dbcp2.version>2.2.0</commons-dbcp2.version>
+		<mybatis.version>3.4.6</mybatis.version>
+		
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<jackson-databind.version>2.9.10.1</jackson-databind.version>
 		<junit.version>4.12</junit.version>
@@ -38,6 +40,13 @@
 			<version>${jstl.version}</version>
 		</dependency>
 
+		<!-- MyBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		
 		<!-- logback -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

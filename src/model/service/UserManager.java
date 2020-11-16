@@ -108,11 +108,15 @@ public class UserManager {
 	}
 	
 	public Community findCommunity(int commId) throws SQLException {
+		/*
 		Community comm = commDAO.findCommunity(commId); 
 		
 		List<User> memberList = userDAO.findUsersInCommunity(commId);
 		comm.setMemberList(memberList);
+		*/
 		
+		Community comm = commDAO.findCommunityWithMembers(commId); 	// using MyBatis <resultMap> and <collection>
+
 		int numOfMembers = userDAO.getNumberOfUsersInCommunity(commId);
 		comm.setNumOfMembers(numOfMembers);
 		return comm;
