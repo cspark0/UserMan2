@@ -2,23 +2,28 @@
 Sample project for DBP class in 2021
 based on MVC architecture 
 
-### Eclipse¿¡¼­ local repository¸¦ »ı¼ºÇÏ°í project¸¦ importÇÏ´Â ¹æ¹ı 
-(ÁÖÀÇ: ¸ÕÀú Github(<https://github.com>)¿¡ ·Î±×ÀÎÇÑ ÈÄ º» ¸®ÆÄÁöÅä¸®(<https://github.com/cspark0/UserMan2>)¿¡ Á¢¼ÓÇØ¼­ ¿ìÃø »ó´ÜÀÇ Fork ¹öÆ°À» ÀÌ¿ëÇÏ¿© º»ÀÎÀÇ °èÁ¤À¸·Î º¹Á¦ÇÔ)
+### Branches
+ 
+- master (default)
+- update - integrates update controllers
+  
+### Eclipseì—ì„œ local repositoryë¥¼ ìƒì„±í•˜ê³  projectë¥¼ importí•˜ëŠ” ë°©ë²• 
+(ì£¼ì˜: ë¨¼ì € Github(<https://github.com>)ì— ë¡œê·¸ì¸í•œ í›„ ë³¸ ë¦¬íŒŒì§€í† ë¦¬(<https://github.com/cspark0/UserMan2>)ì— ì ‘ì†í•´ì„œ ìš°ì¸¡ ìƒë‹¨ì˜ Fork ë²„íŠ¼ì„ ì´ìš©í•˜ì—¬ ë³¸ì¸ì˜ ê³„ì •ìœ¼ë¡œ ë³µì œí•¨)
 
-1. File ¸Ş´º > Import... > Git | Projects from Git 
+1. File ë©”ë‰´ > Import... > Git | Projects from Git 
 2. Clone URI 
-3. forkµÈ  URI ÀÔ·Â(¿¹: https://github.com/your_Github_username/UserMan2.git), user & password °ª ÀÔ·Â 
-4. branch ¼±ÅÃ 
-5. »ı¼ºÇÒ local repository °æ·Î ÀÔ·Â(¿¹: C:\Users\»ç¿ëÀÚ\git\UserMan2) 
-6. Ã¹¹øÂ° ¿É¼Ç "Importing existing Eclipse projects" ¼±ÅÃ >> Finish    
+3. forkëœ  URI ì…ë ¥(ì˜ˆ: https://github.com/your_Github_username/UserMan2.git), user & password ê°’ ì…ë ¥ 
+4. ëª¨ë“  branch ì„ íƒ 
+5. ìƒì„±í•  local repository ê²½ë¡œ ì…ë ¥(ì˜ˆ: C:\Users\ì‚¬ìš©ì\git\UserMan2) 
+6. ì²«ë²ˆì§¸ ì˜µì…˜ "Importing existing Eclipse projects" ì„ íƒ >> Finish    
 
 
-### Âü°í: Git »ç¿ë¹ı 
+### ì°¸ê³ : Git ì‚¬ìš©ë²• 
 
-- À±¿õ½Ä, ¸¸µé¸é¼­ ¹è¿ì´Â Git+GitHub ÀÔ¹®, ÇÑºû¹Ìµğ¾î, 2015.  
-- ¿À¿ÀÃ÷Ä« È÷·ÎÅ°, ¼Ò¼È ÄÚµùÀ¸·Î ÀÌ²ô´Â GitHub ½ÇÃµ ±â¼ú, Á¦ÀÌÆà, 2015.  
+- ìœ¤ì›…ì‹, ë§Œë“¤ë©´ì„œ ë°°ìš°ëŠ” Git+GitHub ì…ë¬¸, í•œë¹›ë¯¸ë””ì–´, 2015.  
+- ì˜¤ì˜¤ì¸ ì¹´ íˆë¡œí‚¤, ì†Œì…œ ì½”ë”©ìœ¼ë¡œ ì´ë„ëŠ” GitHub ì‹¤ì²œ ê¸°ìˆ , ì œì´í, 2015.  
 - <https://backlog.com/git-tutorial/kr/>  
-- <https://nolboo.kim/blog/2013/10/06/github-for-beginner/> ¹× ¸µÅ©µÈ ¹®¼­µé  
+- <https://nolboo.kim/blog/2013/10/06/github-for-beginner/> ë° ë§í¬ëœ ë¬¸ì„œë“¤  
 - <http://itmir.tistory.com/461>  
 - <http://jwgye.tistory.com/38?category=689862>  
-- ¿Â¶óÀÎ ÀÚ·áµé
+- ì˜¨ë¼ì¸ ìë£Œë“¤
