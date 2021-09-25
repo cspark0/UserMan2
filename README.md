@@ -2,7 +2,7 @@
 Sample project for DBP class in 2021
 based on MVC architecture 
 
-### Branches
+__Branches__
  
 - master (default)
 - update - integrates update controllers
