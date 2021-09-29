@@ -4,7 +4,7 @@ based on MVC architecture
 
 __Branches__
  
-- master (default)
+- master <span style="color:blue">(default)</span>
 - update - integrates update controllers
   
 ### Eclipse에서 local repository를 생성하고 project를 import하는 방법 
