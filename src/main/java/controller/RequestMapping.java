@@ -9,11 +9,11 @@ import controller.user.*;
 public class RequestMapping {
     private static final Logger logger = LoggerFactory.getLogger(DispatcherServlet.class);
     
-    // °¢ ¿äÃ» uri¿¡ ´ëÇÑ controller °´Ã¼¸¦ ÀúÀåÇÒ HashMap »ı¼º
+    // ê° ìš”ì²­ uriì— ëŒ€í•œ controller ê°ì²´ë¥¼ ì €ì¥í•  HashMap ìƒì„±
     private Map<String, Controller> mappings = new HashMap<String, Controller>();
 
     public void initMapping() {
-    	// °¢ uri¿¡ ´ëÀÀµÇ´Â controller °´Ã¼¸¦ »ı¼º ¹× ÀúÀå
+    	// ê° uriì— ëŒ€ì‘ë˜ëŠ” controller ê°ì²´ë¥¼ ìƒì„± ë° ì €ì¥
         mappings.put("/", new ForwardController("index.jsp"));
         mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp"));
         mappings.put("/user/login", new LoginController());
@@ -30,7 +30,7 @@ public class RequestMapping {
     }
 
     public Controller findController(String uri) {	
-    	// ÁÖ¾îÁø uri¿¡ ´ëÀÀµÇ´Â controller °´Ã¼¸¦ Ã£¾Æ ¹İÈ¯
+    	// ì£¼ì–´ì§„ uriì— ëŒ€ì‘ë˜ëŠ” controller ê°ì²´ë¥¼ ì°¾ì•„ ë°˜í™˜
         return mappings.get(uri);
     }
 }

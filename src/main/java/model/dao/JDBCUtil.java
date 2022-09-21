@@ -1,6 +1,3 @@
-// Java Project 용 JDBCUtil
-// DBCP2 관련 jar 파일을 프로젝트에 포함해야 동작함
-// commons-dbcp2-X.X.X.jar, commons-pool2-X.X.X.jar, commons-logging-X.X.jar
 package model.dao;
 
 import java.sql.*;

@@ -7,7 +7,9 @@ import java.util.List;
 import model.User;
 import model.dao.UserDAO;
 
-// an example business class
+/**
+ * an example business class
+ */ 
 public class UserAnalysis {
 	private UserDAO dao;
 	
@@ -17,8 +19,8 @@ public class UserAnalysis {
 		super();
 		this.dao = dao;
 	}
-
-	// an example business method
+	
+	// example business method
 	public List<User> recommendFriends(String userId) throws Exception {
 		User thisuser = dao.findUser(userId);
 		if (thisuser == null) {

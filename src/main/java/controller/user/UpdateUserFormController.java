@@ -21,21 +21,21 @@ public class UpdateUserFormController implements Controller {
 		log.debug("UpdateForm Request : {}", updateId);
 
 		UserManager manager = UserManager.getInstance();
-		User user = manager.findUser(updateId);	// »ç¿ëÀÚ Á¤º¸ °Ë»ö
+		User user = manager.findUser(updateId);	// ì‚¬ìš©ì ì •ë³´ ê²€ìƒ‰
 		request.setAttribute("user", user);						
 		
 		HttpSession session = request.getSession();
 		if (UserSessionUtils.isLoginUser(updateId, session) ||
 			UserSessionUtils.isLoginUser("admin", session)) {
-			// ÇöÀç ·Î±×ÀÎÇÑ »ç¿ëÀÚ°¡ ¼öÁ¤ ´ë»ó »ç¿ëÀÚÀÌ°Å³ª °ü¸®ÀÚÀÎ °æ¿ì -> ¼öÁ¤ °¡´É
+			// í˜„ì¬ ë¡œê·¸ì¸í•œ ì‚¬ìš©ìê°€ ìˆ˜ì • ëŒ€ìƒ ì‚¬ìš©ìì´ê±°ë‚˜ ê´€ë¦¬ìì¸ ê²½ìš° -> ìˆ˜ì • ê°€ëŠ¥
 			
-			return "/user/updateForm.jsp";   // °Ë»öÇÑ »ç¿ëÀÚ Á¤º¸¸¦ update formÀ¸·Î Àü¼Û     
+			return "/user/updateForm.jsp";   // ê²€ìƒ‰í•œ ì‚¬ìš©ì ì •ë³´ë¥¼ update formìœ¼ë¡œ ì „ì†¡     
 		}
 		
-		// else (¼öÁ¤ ºÒ°¡´ÉÇÑ °æ¿ì) »ç¿ëÀÚ º¸±â È­¸éÀ¸·Î ¿À·ù ¸Ş¼¼Áö¸¦ Àü´Ş
+		// else (ìˆ˜ì • ë¶ˆê°€ëŠ¥í•œ ê²½ìš°) ì‚¬ìš©ì ë³´ê¸° í™”ë©´ìœ¼ë¡œ ì˜¤ë¥˜ ë©”ì„¸ì§€ë¥¼ ì „ë‹¬
 		request.setAttribute("updateFailed", true);
 		request.setAttribute("exception", 
-			new IllegalStateException("Å¸ÀÎÀÇ Á¤º¸´Â ¼öÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù."));            
-		return "/user/view.jsp";	// »ç¿ëÀÚ º¸±â È­¸éÀ¸·Î ÀÌµ¿ (forwarding)
+			new IllegalStateException("íƒ€ì¸ì˜ ì •ë³´ëŠ” ìˆ˜ì •í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."));            
+		return "/user/view.jsp";	// ì‚¬ìš©ì ë³´ê¸° í™”ë©´ìœ¼ë¡œ ì´ë™ (forwarding)
     }
 }

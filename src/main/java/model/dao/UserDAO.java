@@ -14,7 +14,7 @@ public class UserDAO {
 	private JDBCUtil jdbcUtil = null;
 	
 	public UserDAO() {			
-		jdbcUtil = new JDBCUtil();	// JDBCUtil 梓端 持失
+		jdbcUtil = new JDBCUtil();		// JDBCUtil 梓端 持失
 	}
 		
 	/**

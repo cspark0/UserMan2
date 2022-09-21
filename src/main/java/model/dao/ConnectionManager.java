@@ -23,8 +23,8 @@ public class ConnectionManager {
 			ds = bds;
 			
 			// 참고: WAS의 DataSource를 이용할 경우: 
-			// Context init = new InitialContext();
-			// ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDS");
+			// 		Context init = new InitialContext();
+			// 		ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDS");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}    	   

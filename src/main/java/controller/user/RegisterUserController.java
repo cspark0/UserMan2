@@ -27,10 +27,10 @@ public class RegisterUserController implements Controller {
 		try {
 			UserManager manager = UserManager.getInstance();
 			manager.create(user);
-	        return "redirect:/user/list";		// ¼º°ø ½Ã »ç¿ëÀÚ ¸®½ºÆ® È­¸éÀ¸·Î redirect
+	        return "redirect:/user/list";		// ì„±ê³µ ì‹œ ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ í™”ë©´ìœ¼ë¡œ redirect
 	        
-		} catch (ExistingUserException e) {		// ¿¹¿Ü ¹ß»ı ½Ã È¸¿ø°¡ÀÔ formÀ¸·Î forwarding
-            request.setAttribute("registerFailed", true);
+		} catch (ExistingUserException e) {		// ì˜ˆì™¸ ë°œìƒ ì‹œ íšŒì›ê°€ì… formìœ¼ë¡œ forwarding
+           request.setAttribute("registerFailed", true);
 			request.setAttribute("exception", e);
 			request.setAttribute("user", user);
 			return "/user/registerForm.jsp";
