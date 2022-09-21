@@ -22,8 +22,11 @@ public class RequestMapping {
         mappings.put("/user/view", new ViewUserController());
         mappings.put("/user/register/form", new ForwardController("/user/registerForm.jsp"));
         mappings.put("/user/register", new RegisterUserController());
-        mappings.put("/user/update/form", new UpdateUserFormController());
-        mappings.put("/user/update", new UpdateUserController());
+        
+        // mappings.put("/user/update/form", new UpdateUserController());
+        // mappings.put("/user/update", new UpdateUserController());
+        mappings.put("/user/update", new UpdateUserController());		// request URI 및 controller 통합
+      
         mappings.put("/user/delete", new DeleteUserController());
         
         logger.info("Initialized Request Mapping!");

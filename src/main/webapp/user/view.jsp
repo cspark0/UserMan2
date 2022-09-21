@@ -54,7 +54,7 @@ function userRemove() {
 		  </tr>	
 	 	</table>
 	    <br>
-	    <a href="<c:url value='/user/update/form'>
+	    <a href="<c:url value='/user/update'> 	<!-- '/user/update/form' -->
 	     		   <c:param name='userId' value='<%=user.getUserId()%>'/>
 			 	 </c:url>">수정</a> &nbsp;
  	    <a href="<c:url value='/user/delete'>
