@@ -5,7 +5,7 @@ based on MVC architecture
 __Branches__
  
 - master <span style="color:blue">(default)</span>
-- update - integrates update controllers
+- update(UserMan2u) - integrates update controllers
   
 ### Eclipse에서 local repository를 생성하고 project를 import하는 방법 
 (주의: 먼저 Github(<https://github.com>)에 로그인한 후 본 리파지토리(<https://github.com/cspark0/UserMan2>)에 접속해서 우측 상단의 Fork 버튼을 이용하여 본인의 계정으로 복제함)
@@ -13,7 +13,7 @@ __Branches__
 1. File 메뉴 > Import... > Git | Projects from Git (with smart import) 
 2. Clone URI 
 3. fork된  URI 입력(예: https://github.com/your_Github_username/UserMan2.git), user & password 값 입력 
-4. master branch 선택 
+4. master branch 선택 (또는 모든 branch 선택)
 5. 생성할 local repository 경로 확인 (예: C:\Users\사용자\git\UserMan2) 
 6. 다음 화면(Imports project ...)에서 Finish
 7. 프로젝트가 import되었는지 확인하고 프로젝트가 빌드 완료될 때까지 기다림
