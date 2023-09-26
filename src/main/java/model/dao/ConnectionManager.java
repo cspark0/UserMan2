@@ -7,14 +7,14 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 public class ConnectionManager {
     private static final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private static final String DB_URL = "jdbc:oracle:thin:@dblab.dongduk.ac.kr/orclpdb";
+    private static final String DB_URL = "jdbc:oracle:thin:@dblab.dongduk.ac.kr:1521/orclpdb";
     private static final String DB_USERNAME = "dbp";
     private static final String DB_PASSWORD = "dbp2023#";
     private static DataSource ds = null;
     
     public ConnectionManager() {
     	try {
-			// DataSource »ı¼º ¹× ¼³Á¤
+			// DataSource ìƒì„± ë° ì„¤ì •
 			BasicDataSource bds = new BasicDataSource();
 	        bds.setDriverClassName(DB_DRIVER);
 	        bds.setUrl(DB_URL);
@@ -22,7 +22,7 @@ public class ConnectionManager {
 	        bds.setPassword(DB_PASSWORD);     
 			ds = bds;
 			
-			// Âü°í: WASÀÇ DataSource¸¦ ÀÌ¿ëÇÒ °æ¿ì: 
+			// ì°¸ê³ : WASì˜ DataSourceë¥¼ ì´ìš©í•  ê²½ìš°: 
 			// 		Context init = new InitialContext();
 			// 		ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDS");
 		} catch (Exception ex) {
@@ -49,7 +49,7 @@ public class ConnectionManager {
 		}
 	}
 
-	// ÇöÀç È°¼ºÈ­ »óÅÂÀÎ Connection ÀÇ °³¼ö¿Í ºñÈ°¼ºÈ­ »óÅÂÀÎ Connection °³¼ö Ãâ·Â
+	// í˜„ì¬ í™œì„±í™” ìƒíƒœì¸ Connection ì˜ ê°œìˆ˜ì™€ ë¹„í™œì„±í™” ìƒíƒœì¸ Connection ê°œìˆ˜ ì¶œë ¥
 	public void printDataSourceStats() {
 		try {
 			BasicDataSource bds = (BasicDataSource) ds;
