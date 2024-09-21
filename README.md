@@ -12,7 +12,7 @@ __Branches__
 
 1. File 메뉴 > Import... > Git | Projects from Git (with smart import) 선택
 2. Clone URI 선택
-3. fork된  URI 입력(예: https://github.com/your_Github_username/UserMan2.git), ~~user & password 값 입력~~
+3. fork된  URI 입력(예: https://github.com/your_Github_username/UserMan2.git) ~~및 user & password 값 입력~~
 4. master branch (또는 모든 branch) 선택
 5. 생성할 local repository 경로 확인 또는 변경 (예: C:\Users\사용자\git\UserMan2) 
 6. 다음 화면(Imports project ...)에서 Finish
